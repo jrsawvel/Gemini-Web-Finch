@@ -1,0 +1,38 @@
+{{> header}}
+
+=> /webfeeds    home
+
+
+# {{{feedtitle}}}
+
+=> {{{feedhomepage}}}   {{{feedhomepage}}}
+
+{{#feedsubtitleexists}}
+{{{feedsubtitle}}}
+{{/feedsubtitleexists}}
+
+{{#feedupdatedexists}}
+{{{feedupdated}}}
+{{/feedupdatedexists}}
+
+=> {{{feedurl}}}    {{{feedurl}}}
+
+--------------------
+
+{{#itemsloop}}
+
+{{#itemtitleexists}}
+### {{{itemtitle}}}
+{{/itemtitleexists}}
+
+{{#itemsummaryexists}}
+{{{itemsummary}}}
+{{/itemsummaryexists}}
+
+=> {{{itemlink}}}    {{{itemupdated}}}
+
+--------------------
+
+{{/itemsloop}}
+
+{{> footer}}
