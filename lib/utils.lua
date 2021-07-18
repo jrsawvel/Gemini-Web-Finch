@@ -190,6 +190,9 @@ function M.html_to_gmi(str)
     str = string.gsub(str, "<li>", "* ")
     str = string.gsub(str, "</li>", "\n")
 
+
+    str = string.gsub(str, "<p><p>", "</p>\n<p>")
+
     str = string.gsub(str, "</p>\n", "\n\n")
 
     str = string.gsub(str, "</p>", "\n\n")
@@ -206,8 +209,20 @@ function M.html_to_gmi(str)
     str = string.gsub(str, "<div>", "\n")
     str = string.gsub(str, "</div>", "\n")
 
-    str = M.remove_html(str)
-    str = M.remove_consecutive_newlines(str)
+    local str_len = string.len(str)
+
+    if str_len > 19000 then
+        local str1 = string.sub(str, 1, 19000)
+        local str2 = string.sub(str, 19001, str_len)
+        str1 = M.remove_html(str1)
+        str1 = M.remove_consecutive_newlines(str1)
+        str2 = M.remove_html(str2)
+        str2 = M.remove_consecutive_newlines(str2)
+        str = str1 .. str2
+    else
+        str = M.remove_html(str)
+        str = M.remove_consecutive_newlines(str)
+    end
 
     return str
 end

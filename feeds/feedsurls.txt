@@ -1,3 +1,4 @@
+https://mediagazer.com/feed.xml
 https://api.axios.com/feed/top
 https://solar.lowtechmagazine.com/feeds/all.atom.xml
 http://expeditionaryart.com/feed/
@@ -12,7 +13,6 @@ https://sketchaway.wordpress.com/feed/
 https://profootballtalk.nbcsports.com/feed/
 https://leplog.wordpress.com/feed/
 https://boffosocko.com/feed/
-http://known.kevinmarks.com/content/all?_t=rss
 https://granary.io/url?input=html&output=atom&url=https%3A%2F%2Faaronparecki.com/&hub=https%3A%2F%2Fswitchboard.p3k.io%2F
 https://adactio.com/journal/rss
 https://www.jeremycherfas.net/blog.rss
@@ -27,12 +27,11 @@ https://themarkup.org/feeds/rss.xml
 https://fruityknitting.com/feed/
 https://arnecarlos.com/feed/
 https://www.lillabjorncrochet.com/feeds/posts/default
-https://daisyfarmcrafts.com/feed/
 http://scripting.com/rss.xml
 http://stratechery.com/feed/
 http://feeds.feedburner.com/brad-frosts-blog
 http://waitbutwhy.com/feed
-http://sivers.org/en.atom
+https://sive.rs/en.atom
 http://werd.io/content/posts/?_t=rss
 https://eev.ee/feeds/blog.atom.xml
 http://taint.org/feed
@@ -41,8 +40,9 @@ https://leplog.wordpress.com/feed/
 http://feeds.kottke.org/main
 https://www.muckrock.com/news/feeds/
 https://jvns.ca/atom.xml
-https://ia.net/feed/
+https://ia.net/feed
 http://tantek.com/updates.atom
 https://a.wholelottanothing.org/feed/
 https://inessential.com/xml/rss.xml
-https://lukasrosenstock.net/rss
+https://lukasrosenstock.net/feed.xml
+http://len.falken.ink/

@@ -4,6 +4,7 @@ local M = {}
 local rex   = require "rex_pcre"
 
 local config = require "config"
+local utils  = require "utils"
 
 
 
@@ -58,6 +59,80 @@ function M.create_feed_html_file(feedurl, html, homepageurl)
     end
 
     return domain, html_page
+end
+
+
+function M.create_axios_article_file(file_ctr, title, content, date, link)
+    local doc_root = config.get_value_for("axios_default_doc_root")
+
+    local axios_page     = file_ctr .. ".txt"
+    local axios_filename = doc_root .. "/" .. axios_page
+
+    local f = io.open(axios_filename, "w")
+    if f == nil then
+        error("Could create output file for write for " .. axios_filename .. ".")
+    else
+        local page_content = "# " .. title .. "\n\n"
+        local page_content = page_content .. date .. "\n\n"
+        local page_content = page_content .. content .. "\n"
+        local page_content = page_content .. "=> " .. link .. "\n"
+        f:write(page_content)
+        f:close()
+    end
+end
+
+
+function M.create_axios_feed_file(content)
+    local doc_root = config.get_value_for("axios_default_doc_root")
+
+    local axios_page     = "index.gmi"
+    local axios_filename = doc_root .. "/" .. axios_page
+
+    local f = io.open(axios_filename, "w")
+    if f == nil then
+        error("Could create output file for write for " .. axios_filename .. ".")
+    else
+        f:write(content)
+        f:close()
+    end
+end
+
+
+function M.create_npr_article_file(file_ctr, title, content, date, article_id)
+    local link = "https://text.npr.org/" .. article_id
+
+    local doc_root = config.get_value_for("npr_default_doc_root")
+
+    local npr_page     = file_ctr .. ".txt"
+    local npr_filename = doc_root .. "/" .. npr_page
+
+    local f = io.open(npr_filename, "w")
+    if f == nil then
+        error("Could create output file for write for " .. npr_filename .. ".")
+    else
+        local page_content = "# " .. title .. "\n\n"
+        local page_content = page_content .. date .. "\n\n"
+        local page_content = page_content .. content .. "\n"
+        local page_content = page_content .. "\n\n=> " .. link .. "\n"
+        f:write(page_content)
+        f:close()
+    end
+end
+
+
+function M.create_npr_feed_file(content)
+    local doc_root = config.get_value_for("npr_default_doc_root")
+
+    local npr_page     = "index.gmi"
+    local npr_filename = doc_root .. "/" .. npr_page
+
+    local f = io.open(npr_filename, "w")
+    if f == nil then
+        error("Could create output file for write for " .. npr_filename .. ".")
+    else
+        f:write(content)
+        f:close()
+    end
 end
 
 
